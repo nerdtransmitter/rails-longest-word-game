@@ -1,0 +1,18 @@
+<h1 class="text-center m-5">New Game</h1>
+<ul class="list-inline d-flex flex-row justify-content-center my-5">
+  <% @letters.each do |letter| %>
+  <li class="px-4 py-3 bg-primary m-1 letters fw-bolder shadow"><%= letter.upcase %></li>
+  <% end %>
+</ul>
+
+<form action="/score" method="post" data-turbo="false" class="">
+  <!-- ... -->
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+  <%= hidden_field_tag :start_time, @start_time %>
+  <div class="mt-5 container w-50 text-center">
+    <label for="answer" class="form-label">What is the longest word you can find?</label>
+    <input id="answer" type="text" name="word" value="<%= params[:word]%>" placeholder="What's your answer?" class="form-control mb-3">
+    <input type="submit" value="play">
+  </div>
+</form>

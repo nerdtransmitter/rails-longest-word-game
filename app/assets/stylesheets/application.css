@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Martian+Mono&family=Montserrat:wght@300&family=Nunito:wght@300;400&family=Open+Sans:wght@300;400&family=Orbitron:wght@800;900&family=Poppins:wght@400;600;700;800&display=swap');
+
+ .letters {
+  font-family: 'Martian Mono';
+  color: white;
+ }
+
+ h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900 !important;
+  color: darkblue;
+  font-size: 72px !important;
+ }
+
+ body {
+  background-color: beige;
+ }

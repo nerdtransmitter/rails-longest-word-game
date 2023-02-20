@@ -1,0 +1,18 @@
+<h1 class="text-center">Result</h1>
+<div class="results m-3 container">
+  <div class="row">
+    <p>Your word: <%= params[:word] %></p>
+    <% if @result == 'invalid' %>
+      <p>Sorry, <strong><%= params[:word] %></strong> is not a valid English word.</p>
+    <% elsif @result == 'wins' %>
+      <p>Congratulations! <strong><%= params[:word].capitalize %></strong> is a valid word!</p>
+    <% else %>
+      <p>Sorry, <strong><%= params[:word] %></strong> can't be built from these letters.</p>
+    <% end %>
+
+    <p>Time taken to answer: <%= @time %> seconds</p>
+    <p>You earned <strong><%= @score %></strong> points!</p>
+    <p>Your score is <%= session[:score] %></p>
+    <%= link_to "Play again", new_path %>
+  </div>
+</div>
